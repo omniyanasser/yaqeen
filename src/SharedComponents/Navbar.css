@@ -1,0 +1,39 @@
+ .navbar-arabic {
+  direction: rtl;
+  font-family: 'Cairo', sans-serif;
+}
+
+/* شعار النص بدل الصورة */
+.navbar-arabic .brand-text {
+  color: #6d4c41;
+  font-size: 2.4rem;
+  font-weight: bold;
+  text-decoration: none;
+}
+.navbar-arabic .brand-text:hover{
+  color: #6d4c41;
+}
+
+.navbar-arabic .nav-link {
+  color: #8d6e63 !important;
+  font-weight: 600;
+  font-size: 20px;
+  margin-right: 1rem;
+  margin-left: 0;
+  transition: 0.3s;
+}
+
+.navbar-arabic .nav-link:hover {
+   text-decoration: underline;
+}
+
+/* استجابة على الشاشات الصغيرة */
+@media (max-width: 991px) {
+  .navbar-arabic .navbar-collapse {
+    text-align: right;
+  }
+
+ 
+}   
+
+

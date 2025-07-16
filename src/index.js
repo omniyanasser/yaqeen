@@ -1,17 +1,72 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import * as React from "react";
+import AzkarLayout from "./Azkar/AzkarLayout";
+import { createRoot } from "react-dom/client";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+import { createBrowserRouter, RouterProvider, Link } from "react-router-dom";
+import AllHome from "./Home/AllHome";
+import AllQuranpage from "./Quran/AllQuranpage";
+import AllAzkar from "./Azkar/AllAzkar";
+import AllMorning from "./Azkar/AllMorning";
+import Allevening from "./Azkar/Allevening";
+import Allvariety from "./Azkar/Allvariety";
+import Alltasbeeh from "./Azkar/Alltasbeeh";
+import Allcounter from "./Azkar/Allcounter";
+import Allprayer from "./Prayer/Allprayer";
+import AllLessons from "./Lessons/AllLessons";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <AllHome />,
+  },
+  {
+    path: "quran",
+    element: <AllQuranpage />,
+  },
+
+  {
+    path: "prayer",
+    element: <Allprayer/>,
+  },
+
+  {
+    path: "azkar",
+    element: <AzkarLayout />, 
+    children: [
+      {
+        index: true,
+        element: <AllAzkar />,
+      },
+      {
+        path: "morning",
+        element: <AllMorning />,
+      },
+      {
+        path: "evening",
+        element: <Allevening />,
+      },
+      {
+        path: "general",
+        element: <Allvariety />,
+      },
+      {
+        path: "tasbeeh",
+        element: <Alltasbeeh />,
+      },
+    ],
+  },
+
+  {
+    path: "lessons",
+    element: <AllLessons/>
+  },
+
+  {
+    path: "counter",
+    element: <Allcounter />,
+  },
+]);
+
+createRoot(document.getElementById("root")).render(
+  <RouterProvider router={router} />
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
