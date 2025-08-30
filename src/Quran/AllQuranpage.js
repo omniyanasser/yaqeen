@@ -13,6 +13,7 @@ function AllQuranpage() {
     <div>
       <ArabicNavbar/>
       <Banner/>
+     
       <Search/>
       <Footer/>
     

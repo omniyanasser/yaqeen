@@ -7,6 +7,7 @@ function AllHome() {
   return (
     <div>
       <ArabicNavbar/>
+      <div className='pt-4 mt-5'></div>
       <Homepage/>
       <Footer/>
     </div>

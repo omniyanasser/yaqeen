@@ -12,7 +12,7 @@ import Allvariety from "./Azkar/Allvariety";
 import Alltasbeeh from "./Azkar/Alltasbeeh";
 import Allcounter from "./Azkar/Allcounter";
 import Allprayer from "./Prayer/Allprayer";
-import AllLessons from "./Lessons/AllLessons";
+
 
 const router = createBrowserRouter([
   {
@@ -56,10 +56,7 @@ const router = createBrowserRouter([
     ],
   },
 
-  {
-    path: "lessons",
-    element: <AllLessons/>
-  },
+ 
 
   {
     path: "counter",

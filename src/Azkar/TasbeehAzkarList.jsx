@@ -95,7 +95,7 @@ const TasbeehAzkarList = () => {
                   fontWeight: "bold",
                   border:"none",
                   outline: "none",
-                  borderRadius: "15px",
+                  borderRadius: "100px",
                   padding: "7px 12px",
 
                 }}

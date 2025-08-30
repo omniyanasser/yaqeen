@@ -9,21 +9,24 @@ function Search() {
   const [allSurahs, setAllSurahs] = useState([]);
   const [audioSrc, setAudioSrc] = useState("");
   const [selectedMoshafId, setSelectedMoshafId] = useState("");
+  const [loading, setLoading] = useState(true);
 
   const myApi = "https://mp3quran.net/api/v3";
   const lang = "ar";
 
-  // ✅ Get all reciters
+  // Get all reciters
   useEffect(() => {
+    setLoading(true);
     const fetchReciters = async () => {
       const response = await fetch(`${myApi}/reciters?language=${lang}`);
       const data = await response.json();
       setReciters(data.reciters);
+       setLoading(false);
     };
     fetchReciters();
   }, []);
 
-  // ✅ Get all surahs once
+  //  Get all surahs once
   useEffect(() => {
     const fetchSuwar = async () => {
       const response = await fetch(`${myApi}/suwar`);
@@ -33,7 +36,7 @@ function Search() {
     fetchSuwar();
   }, []);
 
-  // ✅ عند اختيار القارئ
+  //  عند اختيار القارئ
   const handleReciterChange = (e) => {
     const selectedId = e.target.value;
     setSelectedReciterId(selectedId);
@@ -42,10 +45,10 @@ function Search() {
     setSelectedSurahs([]);
   };
 
-  // ✅ عند اختيار رواية
+  //  عند اختيار رواية
   const handleMoshafChange = (e) => {
     const selectedMoshafId = e.target.value;
-    setSelectedMoshafId(selectedMoshafId); // ✅ مهم جدًا
+    setSelectedMoshafId(selectedMoshafId); 
     const selected = moshafList.find(
       (m) => m.id.toString() === selectedMoshafId
     );
@@ -83,6 +86,13 @@ function Search() {
       <div className="container">
         <div className="row">
           <div className="col-lg-12">
+
+               {/* لو بتحميل يعرض رسالة */}
+            {loading ? (
+              <p style={{ textAlign: "center", fontSize: "20px", paddingTop: "40px", marginTop: "90px" }}>
+                ⏳ ...جاري تحميل 
+              </p>
+            ) : (
             <form id="search-form" name="gs" role="search" action="#">
               <div className="row">
                 {/* قارئ */}
@@ -161,6 +171,7 @@ function Search() {
                 </div>
               </div>
             </form>
+            )}
           </div>
         </div>
       </div>

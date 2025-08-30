@@ -3,7 +3,7 @@
   font-family: 'Cairo', sans-serif;
 }
 
-/* شعار النص بدل الصورة */
+
 .navbar-arabic .brand-text {
   color: #6d4c41;
   font-size: 2.4rem;
@@ -27,7 +27,7 @@
    text-decoration: underline;
 }
 
-/* استجابة على الشاشات الصغيرة */
+
 @media (max-width: 991px) {
   .navbar-arabic .navbar-collapse {
     text-align: right;

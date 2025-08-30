@@ -1,8 +1,14 @@
 
+
+
+import Time from "./Time"
+
 function Allprayer() {
   return (
     <div>
-      Hello, prayer
+     
+     <Time />
+    
     </div>
   )
 }

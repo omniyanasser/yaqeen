@@ -34,14 +34,7 @@ const sections = [
     link: "/azkar",
   },
   
-  {
-    title: "العلوم الشرعية ",
-    desc: "استمع إلى دروس قيمة في الفقه والعقيدة والسيرة النبوية.",
-    desc2: "يقدمها نخبة من العلماء والدعاة لزيادة وعيك الديني والمعرفي.",
-    img: "/images/aldin-nasrun-BHaTwTh-6g8-unsplash.jpg",
-    link: "/lessons",
-  },
- 
+  
 ];
 
 const Homepage = () => {
@@ -51,7 +44,7 @@ const Homepage = () => {
       dir="rtl"
       sx={{ fontFamily: "'Cairo', sans-serif", bgcolor: "#f8f9fa" }}
     >
-      {/* Hero Section */}
+      {/* Header Section */}
       <Box
         style={{
           backgroundImage: `linear-gradient(to right, rgba(141, 110, 99, 0.51), rgba(109, 76, 65, 0.31)), url(${process.env.PUBLIC_URL}/images/abdullah-arif-Dxi6KbpvUgA-unsplash.jpg)`,
@@ -61,9 +54,13 @@ const Homepage = () => {
           height: "360px",
         }}
         sx={{
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
           textAlign: "center",
           py: 8,
           color: "#fff",
+          fontSize: { xs: "1.5rem", md: "2.5rem" },
         }}
       >
         <Typography variant="h3" fontWeight="bold" gutterBottom>

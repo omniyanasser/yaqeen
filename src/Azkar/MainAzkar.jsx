@@ -47,7 +47,7 @@ const MainAzkar = () => {
         <Grid container spacing={4} justifyContent="center">
           {azkarSections.map((section, index) => (
             <Grid item xs={12} sm={6} md={4}  key={index}>
-              <Card sx={{ borderRadius: 2, boxShadow: 3 }}>
+              <Card sx={{ borderRadius: 2,  boxShadow: {xs: 1,  sm: 3 }}}>
                 <CardActionArea onClick={() => navigate(section.link)}>
                   <CardMedia
                     component="img"

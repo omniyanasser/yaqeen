@@ -12,6 +12,7 @@ const ArabicNavbar = () => {
       variant="light"
       className="navbar-arabic"
       dir="rtl"
+       style={{ position: "fixed", top: 0, left: 0, right: 0, zIndex: 1030 }}
     >
       <Container>
         <Navbar.Brand as={Link} to="/" className="brand-text">
@@ -20,7 +21,7 @@ const ArabicNavbar = () => {
 
         <Navbar.Toggle aria-controls="main-navbar" />
         <Navbar.Collapse id="main-navbar">
-          <Nav className="ms-auto">
+          <Nav className="mx-auto">
             <Nav.Link as={Link} to="/">
               الرئيسية
             </Nav.Link>
@@ -34,9 +35,7 @@ const ArabicNavbar = () => {
               الأذكار
             </Nav.Link>
            
-            <Nav.Link as={Link} to="/lessons">
-             العلوم الشرعية 
-            </Nav.Link>
+           
            
           </Nav>
         </Navbar.Collapse>

@@ -9,7 +9,7 @@ function Banner() {
       <div className="container">
           <div className="row">
               <div className="col-lg-12">
-                  <div className="header-text">
+                  <div className="header-text display-flex flex-column justify-content-center align-items-center">
                       <h6>اقرأ كتاب الله</h6>
                         <h2><em>ركن</em> القرآن الكريم</h2>
                       

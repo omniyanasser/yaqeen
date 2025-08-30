@@ -22,6 +22,7 @@ const TasbeehNavbar = () => {
         borderBottom: "1px solid #f0e5da",
         position: "fixed",
         width: "100%",
+        zIndex:333,
         
       }}
     >
